@@ -1,0 +1,15 @@
+
+# General Dependencies
+numpy==1.21.0
+matplotlib==3.4.3
+
+# PyTorch
+torch==1.9.0
+
+# Scikit-Learn
+scikit-learn==0.24.2
+
+# Other Dependencies
+sqlite==3.36.0
+
+# Note: 'time', 'string', and 'datetime' are part of the Python standard library and don't need to be explicitly listed.
