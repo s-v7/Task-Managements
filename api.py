@@ -33,7 +33,7 @@ def train_neural_network(model, inputs, targets, epochs, lr=0.001):
     criterion = nn.MSELoss()
     optimizer = optim.Adam(model.parameters(), lr=lr)
 
-    losses = []  # Para armazenar a loss em cada época
+    losses = []  # To store the loss in each epoch
 
     for epoch in range(epochs):
         output = model(inputs)
@@ -44,7 +44,7 @@ def train_neural_network(model, inputs, targets, epochs, lr=0.001):
 
         losses.append(loss.item())
 
-        if epoch % 10 == 0:  # Imprimir a loss a cada 10 épocas
+        if epoch % 10 == 0:  # Print the loss every 10 epochs
             print(f'Época {epoch}, Loss: {loss.item()}')
     return model
 
@@ -205,6 +205,7 @@ def display_menu():
     print("5. Check Schedules   ||")
     print("6. To go out         ||")
     print("======== Menu =========")
+    
 def process_description(description): 
   # Convert to lowercase
   descriptions = description.lower()
@@ -225,7 +226,6 @@ def load_model(model, path="model.pth"):
         print(f"Model loaded with {path}")
     except FileNotFoundError:
         print("No models found. Train a new model.")
-
 
 def save_model(trained_model, path="trained_model.pth"):
     torch.save(trained_model.state_dict(), path)
@@ -264,7 +264,7 @@ def format_seconds(seconds):
     
     return int(days), int(hours), int(minutes), int(seconds)
 
-# **Implementation of Notifications Based on Due Dates:**
+# Implementation of Notifications Based on Due Dates
 def schedule_notifications():
     # Check tasks with due date
     tasks_data = get_all_tasks()
@@ -301,7 +301,6 @@ def get_user_due_date():
             return due_date
         except ValueError:
             print("Invalid date format. Try again.")
-
 
 def add_due_date_to_task():
     # Model configuration
@@ -344,8 +343,6 @@ def add_due_date_to_task():
                   load_model(model, path="trained_model.pth")
                 else:
                   print("At least 2 examples of tasks with valid priorities are required to train the model.")
-
-
 
 # Main function
 def main():
