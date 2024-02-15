@@ -37,7 +37,6 @@ pip install torch numpy sqlite3 matplotlib scikit-learn plyer schedule ...
 ## Contribution
 Feel free to contribute to improvements, bug fixes or new features.
 
-Author
 [Silas Vasconcelos Cruz/Author]
 
 
