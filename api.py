@@ -242,7 +242,7 @@ import pygame
 
 def play_notification_sound():
     pygame.mixer.init()
-    pygame.mixer.music.load("notification_sound.mp3")  # substitua pelo caminho do seu arquivo de som
+    pygame.mixer.music.load("notification_sound.mp3")  # Replace with the path of your sound file
     pygame.mixer.music.play()
 
 def show_desktop_notification(title, message):
@@ -251,7 +251,7 @@ def show_desktop_notification(title, message):
   notification.notify(
       title=notification_title,
       message=notification_message,
-      timeout=10  # tempo em segundos que a notificação ficará visível
+      timeout=10  # Time in seconds that the notification will be visible
       )
 
 def show_console_message(title, message):
@@ -286,11 +286,11 @@ def schedule_notifications():
                 print(f"\nNotification: {notification_title} - [message]: {notification_message}\nFaltam: {days} dias, {hours} horas, {minutes} minutos, {seconds} segundos")
                 if hours < 1 and minutes == 10:
                   message = print(f'Faltam: {minutes} minutos, and {seconds} segundos para Iniciar e/ou terminar ....')
-                  # Chame esta função quando for o momento programado
-                  #show_desktop_notification(task_description, notification_message)
-                  # Exiba uma mensagem diretamente no console ou termina
+                  # Call this function when it is the programmed time
+                  # Show_desktop_notification(task_description, notification_message)
+                  # Display a message directly in the console or terminate
                   show_console_message(notification_title, message)
-                  # Chame esta função quando for o momento programado
+                  # Call this function when it is the programmed time
                   play_notification_sound()
 
 def get_user_due_date():
@@ -349,7 +349,7 @@ def main():
     # Database configuration
     create_database()
 
-    # Configuração do modelo
+    # Model configuration
     input_size = 1
     hidden_size = 8
     output_size = 1
@@ -396,7 +396,7 @@ def main():
             if priority is not None:
                 priority_normalized = priority / 10 
 
-                # Inserir tarefa no banco de dados
+                # Insert task into database
                 insert_task(description_process, priority_normalized, due_date)
 
                 # Update the model with the new task
